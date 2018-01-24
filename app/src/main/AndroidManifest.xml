@@ -29,6 +29,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".songdetail.SongDetailActivity"
+            android:label="@string/title_activity_song_detail"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".history.HistoryActivity" />
+        <activity android:name=".donate.DonateActivity"></activity>
     </application>
 
 </manifest>
