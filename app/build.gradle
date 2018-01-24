@@ -26,9 +26,11 @@ android {
     productFlavors {
         dev {
             dimension "default"
-            applicationIdSuffix '.dev' // The applicationId now becomes "com.example.shazamclone.dev"
+            applicationIdSuffix '.dev'
+            // The applicationId now becomes "com.example.shazamclone.dev"
             versionNameSuffix "-dev" // The versionName now have a "-dev" suffix
-            resValue "string", "app_name", "Shazam Clone Dev" // Changes the app name to "Shazam Clone Dev"
+            resValue "string", "app_name", "Shazam Clone Dev"
+            // Changes the app name to "Shazam Clone Dev"
 
             //[Performance optimization] The following config limits the "dev" flavor
             // to using English string resources and xxhdpi screen-density resources.
@@ -63,8 +65,10 @@ dependencies {
     // Other dependencies
     implementation "com.google.code.gson:gson:$rootProject.ext.gsonVersion"
     implementation "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
-    //implementation "com.github.ybq:Android-SpinKit:$rootProject.ext.spinKitVersion"
+    implementation "com.github.ybq:Android-SpinKit:$rootProject.ext.spinKitVersion"
     // Local unit tests dependencies
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:support-v4:27.0.2'
     testImplementation "junit:junit:$rootProject.ext.junitVersion"
     testImplementation "org.mockito:mockito-core:$rootProject.ext.mockitoVersion"
     //testImplementation "com.nhaarman:mockito-kotlin-kt1.1:$rootProject.kotlinMockitoVersion"
@@ -74,4 +78,6 @@ dependencies {
     androidTestImplementation "com.android.support.test.espresso:espresso-intents:$rootProject.ext.espressoVersion"
     implementation files('libs/acrcloud-android-sdk-1.5.6.5.jar')
 }
+
+
 
