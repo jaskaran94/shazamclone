@@ -20,6 +20,34 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "default"
+
+    productFlavors {
+        dev {
+            dimension "default"
+            applicationIdSuffix '.dev' // The applicationId now becomes "com.example.shazamclone.dev"
+            versionNameSuffix "-dev" // The versionName now have a "-dev" suffix
+            resValue "string", "app_name", "Shazam Clone Dev" // Changes the app name to "Shazam Clone Dev"
+
+            //[Performance optimization] The following config limits the "dev" flavor
+            // to using English string resources and xxhdpi screen-density resources.
+
+            resConfigs "en", "xxhdpi"
+        }
+
+        mock {
+            dimension "default"
+            applicationIdSuffix ".mock"
+            versionNameSuffix "-mock"
+            resValue "string", "app_name", "Shazam Clone Mock"
+        }
+
+        prod {
+            dimension "default"
+            resValue "string", "app_name", "Shazam Clone"
+        }
+    }
 }
 
 dependencies {
